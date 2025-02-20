@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Evan Billot</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4B0082, #00BFFF);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .logo img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Grille des réalisations */
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .mission-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+
+        .mission-card:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Section CV */
+        .cv-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cv-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .cv-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .cv-download {
+            display: inline-block;
+            background: #00BFFF;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .cv-download:hover {
+            background: #4B0082;
+        }
+
+        /* Style du bouton de téléchargement du tableau */
+        .synthese-download {
+            display: inline-block;
+            background: #FFD700;
+            color: black;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .synthese-download:hover {
+            background: #FFA500;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="esieeit_logo.jpg" alt="ESIEE-IT">
+        </div>
+        <h1>Evan Billot</h1>
+        <h2>BTS SIO 2 - Année 2025-2026</h2>
+        
+        <nav>
+            <a href="#" onclick="showSection('home')">Page d'accueil</a>
+            <a id="missions-link" href="#" onclick="showSection('missions')">Fiche Réalisation</a>
+            <a href="#" onclick="showSection('cv')">Mon CV</a>
+            <a href="#" onclick="showSection('synthese')">Tableau de Synthèse</a>
+        </nav>
+
+        <div id="home" class="content-section active">
+            <h2>Bienvenue sur mon portfolio !</h2>
+            <p>Explorez mes réalisations et mon CV ci-dessus.</p>
+        </div>
+
+        <div id="missions" class="content-section">
+            <h2>Fiche Réalisation</h2>
+            <div class="missions-grid">
+                <div class="mission-card"><h3>Réalisation 1</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 2</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 3</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 4</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 5</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 6</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 7</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 8</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 9</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 10</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 11</h3><p>Description...</p></div>
+                <div class="mission-card"><h3>Réalisation 12</h3><p>Description...</p></div>
+            </div>
+        </div>
+
+        <div id="cv" class="content-section">
+            <h2>Mon CV</h2>
+            <p>Vous pouvez télécharger mon CV en cliquant sur le bouton ci-dessous :</p>
+            <a href="billot-evan-cv-IPSSI.pdf" download class="cv-download">📥 Télécharger mon CV</a>
+        </div>
+
+        <div id="synthese" class="content-section">
+            <h2>Tableau de Synthèse</h2>
+            <p>Vous pouvez télécharger mon tableau de synthèse au format Excel en cliquant sur le bouton ci-dessous :</p>
+            <a href="tableau-synthese.xlsx" download class="synthese-download">📊 Télécharger le Tableau</a>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
