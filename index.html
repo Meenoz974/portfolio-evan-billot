@@ -25,6 +25,7 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            overflow-y: auto;
         }
 
         .container {
@@ -81,7 +82,14 @@
             display: block;
         }
 
-        /* Grille des réalisations */
+        /* Style des sous-rubriques */
+        .sous-rubrique {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
         .missions-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -102,30 +110,8 @@
             background: rgba(255, 255, 255, 0.4);
         }
 
-        /* Section CV */
-        .cv-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .cv-card {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: left;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-            width: 300px;
-        }
-
-        .cv-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .cv-download {
+        /* Boutons de téléchargement */
+        .download-btn {
             display: inline-block;
             background: #00BFFF;
             color: white;
@@ -138,26 +124,8 @@
             transition: background 0.3s ease;
         }
 
-        .cv-download:hover {
+        .download-btn:hover {
             background: #4B0082;
-        }
-
-        /* Style du bouton de téléchargement du tableau */
-        .synthese-download {
-            display: inline-block;
-            background: #FFD700;
-            color: black;
-            padding: 12px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background 0.3s ease;
-        }
-
-        .synthese-download:hover {
-            background: #FFA500;
         }
 
     </style>
@@ -172,44 +140,61 @@
         
         <nav>
             <a href="#" onclick="showSection('home')">Page d'accueil</a>
-            <a id="missions-link" href="#" onclick="showSection('missions')">Fiche Réalisation</a>
+            <a href="#" onclick="showSection('missions')">Fiche Réalisation</a>
             <a href="#" onclick="showSection('cv')">Mon CV</a>
             <a href="#" onclick="showSection('synthese')">Tableau de Synthèse</a>
         </nav>
 
         <div id="home" class="content-section active">
             <h2>Bienvenue sur mon portfolio !</h2>
-            <p>Explorez mes réalisations et mon CV ci-dessus.</p>
+            <p>Découvrez moi.</p>
         </div>
 
         <div id="missions" class="content-section">
             <h2>Fiche Réalisation</h2>
-            <div class="missions-grid">
-                <div class="mission-card"><h3>Réalisation 1</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 2</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 3</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 4</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 5</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 6</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 7</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 8</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 9</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 10</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 11</h3><p>Description...</p></div>
-                <div class="mission-card"><h3>Réalisation 12</h3><p>Description...</p></div>
+
+            <!-- Réalisation en cours de formation -->
+            <div class="sous-rubrique">
+                <h3>📌 Réalisation en cours de formation</h3>
+                <div class="missions-grid">
+                    <div class="mission-card"><h3>Réalisation 1</h3><p>Mise en place de OCS et GLPI</p></div>
+                    <div class="mission-card"><h3>Réalisation 2</h3><p>Mise en place d'un serveur Zimbra</p></div>
+                    <div class="mission-card"><h3>Réalisation 3</h3><p>Mise en place d'un serveur Nagios</p></div>
+                    <div class="mission-card"><h3>Réalisation 4</h3><p>Mise en place d'un Active Directory</p></div>
+                    <div class="mission-card"><h3>Réalisation 5</h3><p>Création d'une infrastructure informatique</p></div>
+                    <div class="mission-card"><h3>Réalisation 6</h3><p>Veille technologique</p></div>
+                </div>
+            </div>
+
+            <!-- Réalisations en entreprise - Première année -->
+            <div class="sous-rubrique">
+                <h3>🏢 Réalisations en milieu professionnel en cours de première année</h3>
+                <div class="missions-grid">
+                    <div class="mission-card"><h3>Réalisation 7</h3><p>Support utilisateur</p></div>
+                    <div class="mission-card"><h3>Réalisation 8</h3><p>Création d'un serveur FTP</p></div>
+                    <div class="mission-card"><h3>Réalisation 9</h3><p>Création d'un Forum</p></div>
+                </div>
+            </div>
+
+            <!-- Réalisations en entreprise - Seconde année -->
+            <div class="sous-rubrique">
+                <h3>🏢 Réalisations en milieu professionnel en cours de seconde année</h3>
+                <div class="missions-grid">
+                    <div class="mission-card"><h3>Réalisation 10</h3><p>Description...</p></div>
+                    <div class="mission-card"><h3>Réalisation 11</h3><p>Projet (Changement de serveur)</p></div>
+                    <div class="mission-card"><h3>Réalisation 12</h3><p>Projet (Migration vers Windows 11)</p></div>
+                </div>
             </div>
         </div>
 
         <div id="cv" class="content-section">
             <h2>Mon CV</h2>
-            <p>Vous pouvez télécharger mon CV en cliquant sur le bouton ci-dessous :</p>
-            <a href="billot-evan-cv-IPSSI.pdf" download class="cv-download">📥 Télécharger mon CV</a>
+            <a href="billot-evan-cv-IPSSI.pdf" download class="download-btn">📥 Télécharger mon CV</a>
         </div>
 
         <div id="synthese" class="content-section">
             <h2>Tableau de Synthèse</h2>
-            <p>Vous pouvez télécharger mon tableau de synthèse au format Excel en cliquant sur le bouton ci-dessous :</p>
-            <a href="tableau-synthese.xlsx" download class="synthese-download">📊 Télécharger le Tableau</a>
+            <a href="tableau-synthese.xlsx" download class="download-btn">📊 Télécharger le Tableau</a>
         </div>
     </div>
 
