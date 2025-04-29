@@ -1,0 +1,43 @@
+Mdp pour plateforme :
+
+- ESX1 (172.20.0.8)
+login : root
+mdp : Bts2025$
+
+- DC1 (AD) (172.20.0.10)
+utilisateur : STADIUM\Administrateur
+Mot de passe : Bts2025$
+
+- OCS-GLPI (172.20.0.11)
+-serveur linux
+login : user
+mdp : root
+-OCS http://172.20.0.11/ocsreports/index.php
+utilisateur : admin
+mdp : root
+-GLPI http://172.20.0.11/glpi/
+connexion en base interne 
+login : glpi
+mdp : root
+connexion en liaisonLDAP
+login : Administrateur
+mdp : Bts2025$
+-Serveur SQL (MariaDB ou MySQL) : localhost
+Utilisateur SQL : glpiuser
+Mot de passe SQL : user
+
+- Nagios (172.20.0.12)
+admin (logiciel) http://172.20.0.12/nagios/
+login : nagiosadmin
+mot de passe : root
+
+- Zimbra (mail) (172.20.0.13)
+login : user
+password : Bts2025$
+lien zimbra admin : https://172.20.0.13:7071/
+user : admin
+mot de passe : Bts2025$
+lien zimbra client : https://172.20.0.13:8443/
+user : pmartin ou kcolas
+mot de passe : Bts2025$
+
