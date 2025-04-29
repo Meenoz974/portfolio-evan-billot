@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap');
-        
+
         * {
             margin: 0;
             padding: 0;
@@ -110,8 +110,15 @@
             background: rgba(255, 255, 255, 0.4);
         }
 
-         /* Correction affichage fiche réalisation sur petits écrans */
-         #missions {
+        /* Correction affichage fiche réalisation sur petits écrans */
+        #missions {
+            max-height: 80vh;
+            overflow-y: auto;
+            padding-bottom: 20px;
+        }
+
+        /* Correction affichage Epreuve E6 */
+        #epreuveE6 {
             max-height: 80vh;
             overflow-y: auto;
             padding-bottom: 20px;
@@ -134,7 +141,6 @@
         .download-btn:hover {
             background: #4B0082;
         }
-
     </style>
 </head>
 <body>
@@ -144,12 +150,13 @@
         </div>
         <h1>Evan Billot</h1>
         <h2>BTS SIO 2 - Année 2025-2026</h2>
-        
+
         <nav>
             <a href="#" onclick="showSection('home')">Page d'accueil</a>
             <a href="#" onclick="showSection('missions')">Fiche Réalisation</a>
             <a href="#" onclick="showSection('cv')">Mon CV</a>
             <a href="#" onclick="showSection('synthese')">Tableau de Synthèse</a>
+            <a href="#" onclick="showSection('epreuveE6')">Épreuve E6</a> <!-- Nouvelle rubrique ajoutée -->
         </nav>
 
         <div id="home" class="content-section active">
@@ -203,6 +210,38 @@
             <h2>Tableau de Synthèse</h2>
             <a href="tableau-synthese.xlsx" download class="download-btn">📊 Télécharger le Tableau</a>
         </div>
+
+        <!-- Nouvelle rubrique Épreuve E6 -->
+        <div id="epreuveE6" class="content-section">
+            <h2>Épreuve E6</h2>
+
+            <div class="sous-rubrique">
+                <h3>📄 Réalisations professionnelles</h3>
+                <p><a href="Réalisation-Pro-1-ESIEE-IT-evan-billot.pdf" download class="download-btn">📥 Réalisation Professionnelle 1</a></p>
+                <p><a href="Réalisation-Pro-2-ESIEE-IT-evan-billot.pdf" download class="download-btn">📥 Réalisation Professionnelle 2</a></p>
+            </div>
+
+            <div class="sous-rubrique">
+                <h3>📝 Documentations plateforme</h3>
+                <div class="missions-grid">
+                    <div class="mission-card"><p>Configuration routeur et switch</p><a href="Configuration routeur et switch.odt" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Mise en place d'un AD</p><a href="Mise en place d'un AD.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Mise en place de Nagios</p><a href="Mise en place de Nagios.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Mise en place de OCS-GLPI</p><a href="Mise en place de OCS-GLPI.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Mise en place de Zimbra</p><a href="Mise en place de Zimbra.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Installation de pFsense</p><a href="Installation de pFsense.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Intégration du groupe utilisateur Caméra IP</p><a href="Intégration du groupe utilisateur Caméra IP.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Intégration du groupe utilisateur Caméra IP dans Zimbra</p><a href="Intégration du groupe utilisateur Caméra IP dans Zimbra.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Liaison entre OCS et GLPI</p><a href="Liaison entre OCS et GLPI.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Liaison LDAP entre GLPI et Active Directory</p><a href="Liaison LDAP entre GLPI et Active Directory.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Liaison LDAP entre Zimbra et Active Directory</p><a href="Liaison LDAP entre Zimbra et Active Directory.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Mise en place d'un service Radius</p><a href="Mise en place d'un service Radius.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Mots de passe plateforme</p><a href="Mots de passe plateforme.txt" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Schéma réseau</p><a href="Schéma réseau.docx" download class="download-btn">📥 Télécharger</a></div>
+                    <div class="mission-card"><p>Mise en place de Snort</p><a href="Mise en place de Snort.docx" download class="download-btn">📥 Télécharger</a></div>
+                </div>
+            </div>            
+
     </div>
 
     <script>
